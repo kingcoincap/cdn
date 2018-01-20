@@ -22,12 +22,11 @@ $(document).ready(function() {
 });
 $('#data-table').DataTable({
    drawCallback: function(){
-        $("img.lazy").lazyload();
+    $('.lazy img')
+      .visibility({
+        type       : 'image',
+        transition : 'fade in',
+        duration   : 1000
+    });
    }
-});
-$('.lazy img')
-  .visibility({
-    type       : 'image',
-    transition : 'fade in',
-    duration   : 1000
 });
