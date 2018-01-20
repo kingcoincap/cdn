@@ -20,16 +20,14 @@ $(document).ready(function() {
   }
 
 });
-$(document).ready(function() {
-    $('#data-table').DataTable( {
-        "paging":   true,
-        "length": false,
-        "info":     true
-    } );
+$('#data-table').DataTable({
+   drawCallback: function(){
+        $("img.lazy").lazyload();
+   }
 });
 $('.lazy img')
   .visibility({
     type       : 'image',
     transition : 'fade in',
     duration   : 1000
- });
+});
